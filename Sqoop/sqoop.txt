@@ -1,0 +1,185 @@
+# 📥 Sqoop Import Commands (MariaDB → HDFS)
+
+## 🔹 Overview
+
+These commands are used to import data from MariaDB into Hadoop HDFS staging zone.
+
+---
+
+## ⚙️ Connection Configuration
+
+```bash
+--connect jdbc:mysql://localhost:3306/
+--username root
+--password ****
+```
+
+> ⚠️ Password is hidden for security reasons.
+
+---
+
+## 📂 Target Directory (HDFS)
+
+All tables are imported into:
+
+```bash
+/staging/
+```
+
+---
+
+## 🚴 Sales Schema Tables
+
+### 🔹 customers
+
+```bash
+sqoop import \
+--connect jdbc:mysql://localhost:3306/sales \
+--username root \
+--password **** \
+--table customers \
+--target-dir /staging/customers \
+--delete-target-dir \
+--num-mappers 1
+```
+
+---
+
+### 🔹 orders
+
+```bash
+sqoop import \
+--connect jdbc:mysql://localhost:3306/sales \
+--username root \
+--password **** \
+--table orders \
+--target-dir /staging/orders \
+--delete-target-dir \
+--num-mappers 1
+```
+
+---
+
+### 🔹 order_items
+
+```bash
+sqoop import \
+--connect jdbc:mysql://localhost:3306/sales \
+--username root \
+--password **** \
+--table order_items \
+--target-dir /staging/order_items \
+--delete-target-dir \
+--num-mappers 1
+```
+
+---
+
+### 🔹 stores
+
+```bash
+sqoop import \
+--connect jdbc:mysql://localhost:3306/sales \
+--username root \
+--password **** \
+--table stores \
+--target-dir /staging/stores \
+--delete-target-dir \
+--num-mappers 1
+```
+
+---
+
+### 🔹 staffs
+
+```bash
+sqoop import \
+--connect jdbc:mysql://localhost:3306/sales \
+--username root \
+--password **** \
+--table staffs \
+--target-dir /staging/staffs \
+--delete-target-dir \
+--num-mappers 1
+```
+
+---
+
+## 🏭 Production Schema Tables
+
+### 🔹 products
+
+```bash
+sqoop import \
+--connect jdbc:mysql://localhost:3306/production \
+--username root \
+--password **** \
+--table products \
+--target-dir /staging/products \
+--delete-target-dir \
+--num-mappers 1
+```
+
+---
+
+### 🔹 brands
+
+```bash
+sqoop import \
+--connect jdbc:mysql://localhost:3306/production \
+--username root \
+--password **** \
+--table brands \
+--target-dir /staging/brands \
+--delete-target-dir \
+--num-mappers 1
+```
+
+---
+
+### 🔹 categories
+
+```bash
+sqoop import \
+--connect jdbc:mysql://localhost:3306/production \
+--username root \
+--password **** \
+--table categories \
+--target-dir /staging/categories \
+--delete-target-dir \
+--num-mappers 1
+```
+
+---
+
+### 🔹 stocks
+
+```bash
+sqoop import \
+--connect jdbc:mysql://localhost:3306/production \
+--username root \
+--password **** \
+--table stocks \
+--target-dir /staging/stocks \
+--delete-target-dir \
+--num-mappers 1
+```
+
+---
+
+## ⚠️ Notes
+
+* `--delete-target-dir` ensures fresh data import each time
+* `--num-mappers 1` is used due to limited VM resources
+* Data is imported **without headers**, handled later in Spark
+
+---
+
+## ✅ Validation
+
+After import, verify data in HDFS:
+
+```bash
+hdfs dfs -ls /staging/
+hdfs dfs -cat /staging/orders/part-m-00000 | head
+```
