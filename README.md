@@ -184,7 +184,7 @@ LOCATION '/user/hive/warehouse/bike_dw.db/sales_kpi';
 * Complete Hive ↔ HBase integration
 * Add Airflow for orchestration
 * Optimize performance using partitioning
-* Build dashboards (Power BI / Tableau)
+* Build dashboards (Power BI / Tableau(
 
 ---
 
