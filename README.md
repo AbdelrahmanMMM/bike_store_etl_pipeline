@@ -137,7 +137,7 @@ LOCATION '/user/hive/warehouse/bike_dw.db/sales_kpi';
 
 ---
 
-## 📊 5. Data Visualization (Power BI)
+##  Data Visualization (Power BI)
 
 The final aggregated datasets generated from Apache Hive were imported into Microsoft Power BI to design an interactive analytics dashboard.
 
@@ -156,6 +156,8 @@ Cruisers Bicycles lead all categories in total units sold.
 A clear variation in yearly revenue is observed, with peak performance in earlier years.
 Staff performance analysis shows a strong correlation between number of orders and generated revenue.
 Inventory tracking highlights specific stores with critical stock shortages requiring immediate action.
+
+
 
 ## ⚡ Challenges & Solutions
 
@@ -204,7 +206,6 @@ Inventory tracking highlights specific stores with critical stock shortages requ
 * Complete Hive ↔ HBase integration
 * Add Airflow for orchestration
 * Optimize performance using partitioning
-* Build dashboards (Power BI / Tableau(
 
 ---
 
