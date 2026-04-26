@@ -137,6 +137,26 @@ LOCATION '/user/hive/warehouse/bike_dw.db/sales_kpi';
 
 ---
 
+## 📊 5. Data Visualization (Power BI)
+
+The final aggregated datasets generated from Apache Hive were imported into Microsoft Power BI to design an interactive analytics dashboard.
+
+This dashboard transforms raw KPIs into clear, decision-ready insights through dynamic visuals and filters. It provides a comprehensive overview of business performance across sales, inventory, customers, and staff efficiency.
+
+### 🎯 Dashboard Highlights
+High-level KPIs including Total Revenue, Total Orders, and Units Sold
+Revenue distribution across different stores
+Category-wise analysis of units sold
+Top customers based on lifetime value
+Staff performance evaluation (orders, revenue, customers served)
+Automated identification of out-of-stock items per store
+### 📌 Sample Insights
+Baldwin Bikes contributes the largest share of total revenue.
+Cruisers Bicycles lead all categories in total units sold.
+A clear variation in yearly revenue is observed, with peak performance in earlier years.
+Staff performance analysis shows a strong correlation between number of orders and generated revenue.
+Inventory tracking highlights specific stores with critical stock shortages requiring immediate action.
+
 ## ⚡ Challenges & Solutions
 
 ### 🔹 Missing Headers in HDFS
