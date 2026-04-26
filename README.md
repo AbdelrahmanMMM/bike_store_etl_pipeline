@@ -157,7 +157,7 @@ A clear variation in yearly revenue is observed, with peak performance in earlie
 Staff performance analysis shows a strong correlation between number of orders and generated revenue.
 Inventory tracking highlights specific stores with critical stock shortages requiring immediate action.
 
-
+<img width="1920" height="1080" alt="Power BI Dashboard" src="583854632-7074a9fb-65ba-4443-bc8c-d83e464073b4.png" />
 
 ## ⚡ Challenges & Solutions
 
